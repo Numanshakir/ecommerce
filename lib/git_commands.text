@@ -1,0 +1,13 @@
+
+
+
+
+
+///Normal Git Commands
+git status
+git add .
+git commit -m "your commit"
+git pull
+git push
+
+
