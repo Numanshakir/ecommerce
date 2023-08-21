@@ -1,4 +1,5 @@
 import 'package:ecommerce/App/Authentication/View/sign_up_view.dart';
+import 'package:ecommerce/Common/AppText/app_text.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -7,20 +8,33 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-// Navigator.pop(context);
-
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => SignUpView()));
-        // Navigator.pushReplacement(
-        //     context, MaterialPageRoute(builder: (context) => SignUpView()));
-        // Navigator.pushAndRemoveUntil(
-        //     context,
-        //     MaterialPageRoute(builder: (context) => SignUpView()),
-        //     (route) => false);
-      }),
-      appBar: AppBar(),
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.white,
+      body: SafeArea(
+          child: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Colors.white,
+        child: Column(
+          children: [
+            CustomText(
+              title: "Welcome to EasyShop",
+              size: 24,
+              fontWeight: FontWeight.w600,
+            ),
+            CustomText(
+              title: "Sign in to Continue",
+              size: 13,
+              color: Colors.grey,
+              fontWeight: FontWeight.w400,
+            ),
+          ],
+        ),
+      )),
     );
   }
 }
+
+// w700 bold
+// 600 Semibold,
+// 500 Medium
+// 400 regular
