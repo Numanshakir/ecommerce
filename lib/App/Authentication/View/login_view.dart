@@ -1,4 +1,5 @@
 import 'package:ecommerce/App/Authentication/View/sign_up_view.dart';
+import 'package:ecommerce/App/Home/View/home_view.dart';
 import 'package:ecommerce/Common/AppBtns/icon_btn.dart';
 import 'package:ecommerce/Common/AppBtns/primary_btn.dart';
 import 'package:ecommerce/Common/AppText/app_text.dart';
@@ -85,7 +86,16 @@ class LoginView extends StatelessWidget {
                       SizedBox(
                         height: 10,
                       ),
-                      PrimaryBTN(),
+                      PrimaryBTN(
+                        onPressed: () {
+                          print("object 1");
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeView()),
+                              (route) => false);
+                        },
+                      ),
                       SizedBox(
                         height: 15,
                       ),
