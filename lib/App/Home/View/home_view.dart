@@ -70,6 +70,21 @@ class HomeView extends StatelessWidget {
                     ],
                   ),
                 ),
+                Container(
+                  height: 300,
+                  width: 400,
+                  color: Colors.amber,
+                  child: ListView.builder(
+                      itemCount: 2,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: EdgeInsets.all(5),
+                          height: 50,
+                          width: 50,
+                          color: Colors.red,
+                        );
+                      }),
+                )
               ],
             ),
           )),
