@@ -1,3 +1,4 @@
+import 'package:ecommerce/App/Categories/View/categories_view.dart';
 import 'package:flutter/material.dart';
 
 import 'App/Splash/splash_view.dart';
