@@ -72,7 +72,9 @@ TextEditingController password=TextEditingController();
                         SizedBox(
                           height: 35,
                         ),
-                        PrimaryFormField(controller: email,errorMessage: "Email is Required!",),
+                        PrimaryFormField(
+                          controller: email,
+                        errorMessage: "Email is Required!",),
                         SizedBox(
                           height: 30,
                         ),
@@ -111,11 +113,11 @@ TextEditingController password=TextEditingController();
 
 
                              print("object 1");
-                            // Navigator.pushAndRemoveUntil(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => HomeView()),
-                            //     (route) => false);
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeView()),
+                                (route) => false);
 
                           }
 

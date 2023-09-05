@@ -1,4 +1,5 @@
 import 'package:ecommerce/App/Categories/View/categories_view.dart';
+import 'package:ecommerce/Statemanagent/counter_app.dart';
 import 'package:flutter/material.dart';
 
 import 'App/Splash/splash_view.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ECommerce',
-      home: SplashView(),
+      home: CounterApp(),
     );
   }
 }
