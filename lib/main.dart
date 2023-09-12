@@ -1,3 +1,4 @@
+import 'package:ecommerce/App/APISModule/View/albums_view.dart';
 import 'package:ecommerce/App/Categories/View/categories_view.dart';
 import 'package:ecommerce/Statemanagent/counter_app.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'ECommerce',
-      home: CounterApp(),
+      home: AlbumsView(),
     );
   }
 }
