@@ -14,4 +14,8 @@ class AlbumViewModel extends GetxController with AlbumRepo {
     print("    albumsData.value ");
     print(albumsData.value);
   }
+
+  onCreateAlbumsData() async {
+    await createAlbum();
+  }
 }

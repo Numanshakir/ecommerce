@@ -24,7 +24,9 @@ class _AlbumsViewState extends State<AlbumsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        albumViewModel.onCreateAlbumsData();
+      }),
       appBar: AppBar(
         title: Text("Albums App"),
       ),
