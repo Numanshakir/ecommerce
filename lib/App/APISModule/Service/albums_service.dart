@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:ecommerce/App/APISModule/Model/album_model.dart';
 import 'package:http/http.dart' as http;
@@ -71,19 +72,28 @@ mixin AlbumRepo {
   //   // }
   // }
   createAlbum() async {
-    http.Response response = await http.post(
-      Uri.parse('https://jsonplaceholder.typicode.com/albums'),
-      headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: jsonEncode(<String, String>{
-        'title': "Testing in career",
-      }),
-    );
-    print(response.statusCode);
-    print(jsonDecode(response.body));
-    // if (response.statusCode == 200) {
-    //   print(jsonDecode(response.body));
-    // }
+    try {
+      http.Response response = await http.post(
+        Uri.parse('https://jsonplaceholder.typicode.com/albums'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(<String, String>{
+          'title': "Testing in career",
+        }),
+      );
+      print(response.statusCode);
+      print(jsonDecode(response.body));
+      // if (response.statusCode == 200) {
+      //   print(jsonDecode(response.body));
+      // }
+    } on SocketException {
+      print("No Internet");
+    } on FormatException {
+      print("Format Error");
+    } catch (error) {
+      print("Error");
+      print(error);
+    }
   }
 }
