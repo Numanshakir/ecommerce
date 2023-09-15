@@ -15,6 +15,17 @@ class AlbumViewModel extends GetxController with AlbumRepo {
     print(albumsData.value);
   }
 
+  onDateAlbumData({required String id, required int index}) async {
+    albumsData.value.removeAt(index);
+    albumsData.refresh();
+
+    await onDelAlbum(id);
+  }
+
+  onUpdateAlbum({required String id}) async {
+    await onUpdateAlbumService(id);
+  }
+
   onCreateAlbumsData() async {
     await createAlbum();
   }

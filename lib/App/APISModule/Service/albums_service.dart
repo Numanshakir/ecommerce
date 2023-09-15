@@ -18,6 +18,38 @@ mixin AlbumRepo {
     return albums;
   }
 
+  Future<bool> onDelAlbum(String id) async {
+    bool isDeleted = false;
+
+    http.Response response = await http
+        .get(Uri.parse("https://jsonplaceholder.typicode.com/albums/$id"));
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      isDeleted = true;
+    } else {
+      print(response.statusCode);
+      print(jsonDecode(response.body));
+    }
+
+    return isDeleted;
+  }
+
+  onUpdateAlbumService(String id) async {
+    http.Response response = await http.put(
+      Uri.parse('https://jsonplaceholder.typicode.com/albums/$id'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'title': "Testing in career",
+      }),
+    );
+    print(response.statusCode);
+    print(jsonDecode(response.body));
+    // if (response.statusCode == 200) {
+    //   print(jsonDecode(response.body));
+    // }
+  }
+
   // createAlbum() async {
   //   http.Response response = await http.post(
   //     Uri.parse('http://54.251.18.92/api/v1/auth/login'),

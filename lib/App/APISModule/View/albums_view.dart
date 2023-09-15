@@ -41,20 +41,35 @@ class _AlbumsViewState extends State<AlbumsView> {
                 : ListView.builder(
                     itemCount: albumViewModel.albumsData.value.length,
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.red)),
-                          child: Column(
-                            children: [
-                              Text(albumViewModel.albumsData.value[index].id
-                                  .toString()),
-                              Text(albumViewModel.albumsData.value[index].title
-                                  .toString()),
-                              Text(albumViewModel.albumsData.value[index].userId
-                                  .toString()),
-                            ],
+                      return InkWell(
+                        onTap: () {
+                          // albumViewModel.onDateAlbumData(
+                          //     id: albumViewModel.albumsData.value[index].id
+                          //         .toString(),
+                          //     index: index);
+
+                          albumViewModel.onUpdateAlbum(
+                            id: albumViewModel.albumsData.value[index].id
+                                .toString(),
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.red)),
+                            child: Column(
+                              children: [
+                                Text(albumViewModel.albumsData.value[index].id
+                                    .toString()),
+                                Text(albumViewModel
+                                    .albumsData.value[index].title
+                                    .toString()),
+                                Text(albumViewModel
+                                    .albumsData.value[index].userId
+                                    .toString()),
+                              ],
+                            ),
                           ),
                         ),
                       );
