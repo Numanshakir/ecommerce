@@ -9,7 +9,7 @@ mixin FirebaseService {
       "email": "test@gmail.com",
     };
 
-    await _db.collection("users").doc("user2").set(data);
+    await _db.collection("users").doc(DateTime.now().millisecondsSinceEpoch.toString()).set(data);
   }
 
   getUserInfo() async {
