@@ -24,8 +24,11 @@ class _UsersInfoViewState extends State<UsersInfoView> with FirebaseService {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {
-        saveUserInfo();
+        // saveUserInfo();
         // getUserInfo();
+        // onFetchUsers();
+        // updateUserInfo();
+        deleteUserInfo();
       }),
       appBar: AppBar(
         title: Text("Users App"),
