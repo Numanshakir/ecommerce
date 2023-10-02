@@ -10,7 +10,7 @@ class CounterAppViewModel extends GetxController {
 
   @override
   void onClose() {
-    // TODO: implement onClose
+    // TODO: implement onClose`
     super.onClose();
     print("Instant Deleted");
   }
